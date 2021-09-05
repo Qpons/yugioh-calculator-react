@@ -8,6 +8,8 @@ import Player2Status from './components/Player2Status';
 import KeypadArea from './components/KeypadArea';
 import GameEndPopup from './components/GameEndPopup';
 import Button from '@material-ui/core/Button';
+import DiceArea from './components/DiceArea';
+import CoinArea from './components/CoinArea';
 
 function App() {
   const [damage, setDamage] = useState('');
@@ -39,24 +41,30 @@ function App() {
         Restart
       </Button>
       <GameStatus matchStatus={matchProgress} />
-      <div className='player-field p1'>
+      <div className='base p1'>
         <GameOverContext.Provider value={{ gameOver, setGameOver }}>
           <DamageContext.Provider value={{ damage, setDamage }}>
             <Player1Status newMatch={matchProgress.length} />
           </DamageContext.Provider>
         </GameOverContext.Provider>
       </div>
-      <div className='player-field p2'>
+      <div className='base p2'>
         <GameOverContext.Provider value={{ gameOver, setGameOver }}>
           <DamageContext.Provider value={{ damage, setDamage }}>
             <Player2Status newMatch={matchProgress.length} />
           </DamageContext.Provider>
         </GameOverContext.Provider>
       </div>
-      <div className='keypad-area'>
+      <div className='base coin-area'>
+        <CoinArea />
+      </div>
+      <div className='base keypad-area'>
         <DamageContext.Provider value={{ damage, setDamage }}>
           <KeypadArea />
         </DamageContext.Provider>
+      </div>
+      <div className='base dice-area'>
+        <DiceArea />
       </div>
       <GameOverContext.Provider value={{ gameOver, setGameOver }}>
         <GameEndPopup
