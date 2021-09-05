@@ -7,7 +7,7 @@ import Player2Status from './components/Player2Status';
 import KeypadArea from './components/KeypadArea';
 
 function App() {
-  const [damage, setDamage] = useState(0);
+  const [damage, setDamage] = useState('');
 
   return (
     <div>

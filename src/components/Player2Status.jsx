@@ -26,23 +26,27 @@ const Player2Status = () => {
       <div className='player1'>
         <Button
           color='secondary'
-          onClick={() => setP2Hp(p2Hp - damage)}
+          onClick={() => setP2Hp(p2Hp - parseInt(damage, 10))}
           variant='contained'
         >
           Damage
         </Button>
         <Button
-          onClick={() => setP2Hp(p2Hp + damage)}
+          onClick={() => setP2Hp(p2Hp + parseInt(damage, 10))}
           style={{ background: 'green', color: 'white' }}
           variant='contained'
         >
           Heal
         </Button>
         <br />
-        <Button color='primary' variant='contained'>
+        <Button
+          color='primary'
+          onClick={() => setP2Hp(p2Hp / 2)}
+          variant='contained'
+        >
           1/2
         </Button>
-        <Button color='default' variant='contained'>
+        <Button color='default' onClick={() => setP2Hp(0)} variant='contained'>
           OTK
         </Button>
       </div>

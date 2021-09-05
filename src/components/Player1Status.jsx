@@ -26,13 +26,13 @@ const Player1Status = () => {
       <div className='player1'>
         <Button
           color='secondary'
-          onClick={() => setP1Hp(p1Hp - damage)}
+          onClick={() => setP1Hp(p1Hp - parseInt(damage, 10))}
           variant='contained'
         >
           Damage
         </Button>
         <Button
-          onClick={() => setP1Hp(p1Hp + damage)}
+          onClick={() => setP1Hp(p1Hp + parseInt(damage, 10))}
           style={{ background: 'green', color: 'white' }}
           variant='contained'
         >

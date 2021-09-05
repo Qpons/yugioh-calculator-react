@@ -18,7 +18,7 @@ const KeypadArea = () => {
     '00',
     '000',
   ];
-  const [damageField, setDamageField] = useState('');
+
   const { damage, setDamage } = useContext(DamageContext);
 
   return (
@@ -27,8 +27,7 @@ const KeypadArea = () => {
         <Button
           color='default'
           onClick={() => {
-            setDamageField('');
-            setDamage(0);
+            setDamage('');
           }}
           variant='contained'
         >
@@ -36,20 +35,16 @@ const KeypadArea = () => {
         </Button>
         <TextField
           onChange={(e) => {
-            setDamageField(e.target.value);
-            setDamage(parseInt(e.target.value, 10));
+            setDamage(e.target.value);
           }}
           type='number'
-          value={damageField}
+          value={damage}
           variant='filled'
         />
         <Button
           color='secondary'
           onClick={() => {
-            setDamageField(damageField.slice(0, damageField.length - 1));
-            setDamage(
-              parseInt(damageField.slice(0, damageField.length - 1), 10)
-            );
+            setDamage(damage.slice(0, damage.length - 1), 10);
             console.log(damage);
           }}
           variant='contained'
@@ -66,7 +61,7 @@ const KeypadArea = () => {
               <Button
                 color='primary'
                 key={index}
-                onClick={() => setDamageField(damageField + value)}
+                onClick={() => setDamage(damage + value)}
                 variant='contained'
               >
                 {value}
