@@ -20,17 +20,16 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  float: left;
 }
 
 .p1 {
-  float: left;
   background-color: #ddd604;
   min-height: 30vh;
   width: 50%;
 }
 
 .p2 {
-  float: right;
   background-color: #747001;
   min-height: 30vh;
   width: 50%;
@@ -46,14 +45,12 @@
   background-color: #04dd0f;
   min-height: 50vh;
   width: 25%;
-  float: right;
 }
 
 .coin-area {
   background-color: #173819;
   min-height: 50vh;
   width: 25%;
-  float: left;
 }
 
 .App-link {

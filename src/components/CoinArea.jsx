@@ -12,9 +12,6 @@ const CoinArea = () => {
         <Button color='secondary' variant='contained'>
           Remove Coin
         </Button>
-        <Button color='default' variant='contained'>
-          Flip Coin(s)
-        </Button>
       </ButtonGroup>
     </div>
   );
