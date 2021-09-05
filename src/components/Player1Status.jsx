@@ -1,11 +1,17 @@
 import React, { useContext, useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import { DamageContext } from '../DamageContext';
+import { DamageContext, GameOverContext } from '../DamageContext';
 
 const Player1Status = () => {
   const [p1Hp, setP1Hp] = useState(8000);
   const { damage } = useContext(DamageContext);
+  const { setGameOver } = useContext(GameOverContext);
+
+  if (p1Hp <= 0) {
+    setGameOver(true);
+    setP1Hp(1);
+  }
 
   return (
     <>
