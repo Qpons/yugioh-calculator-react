@@ -1,17 +1,32 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import Paper from '@material-ui/core/Paper'
+import { DamageContext } from './DamageContext';
 import GameStatus from './components/GameStatus';
+import Player1Status from './components/Player1Status';
+import Player2Status from './components/Player2Status';
+import KeypadArea from './components/KeypadArea';
 
 function App() {
+  const [damage, setDamage] = useState(0);
+
   return (
-    <div className="App">
-      <GameStatus/>
-      <header className="App-header">
-
-        <img src={logo} className="App-logo" alt="logo" />
-
-      </header>
+    <div>
+      <GameStatus />
+      <div className='player-field p1'>
+        <DamageContext.Provider value={{ damage, setDamage }}>
+          <Player1Status />
+        </DamageContext.Provider>
+      </div>
+      <div className='player-field p2'>
+        <DamageContext.Provider value={{ damage, setDamage }}>
+          <Player2Status />
+        </DamageContext.Provider>
+      </div>
+      <div className='keypad-area'>
+        <DamageContext.Provider value={{ damage, setDamage }}>
+          <KeypadArea />
+        </DamageContext.Provider>
+      </div>
     </div>
   );
 }
