@@ -40,7 +40,9 @@ function App() {
       >
         Restart
       </Button>
+
       <GameStatus matchStatus={matchProgress} />
+
       <div className='base p1'>
         <GameOverContext.Provider value={{ gameOver, setGameOver }}>
           <DamageContext.Provider value={{ damage, setDamage }}>
@@ -48,6 +50,7 @@ function App() {
           </DamageContext.Provider>
         </GameOverContext.Provider>
       </div>
+
       <div className='base p2'>
         <GameOverContext.Provider value={{ gameOver, setGameOver }}>
           <DamageContext.Provider value={{ damage, setDamage }}>
@@ -55,17 +58,21 @@ function App() {
           </DamageContext.Provider>
         </GameOverContext.Provider>
       </div>
+
       <div className='base coin-area'>
         <CoinArea />
       </div>
+
       <div className='base keypad-area'>
         <DamageContext.Provider value={{ damage, setDamage }}>
           <KeypadArea />
         </DamageContext.Provider>
       </div>
+
       <div className='base dice-area'>
         <DiceArea />
       </div>
+
       <GameOverContext.Provider value={{ gameOver, setGameOver }}>
         <GameEndPopup
           onConfirm={(winner) =>

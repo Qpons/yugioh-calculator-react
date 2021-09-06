@@ -26,6 +26,7 @@ const Player1Status = ({ newMatch }) => {
           First
         </Button>
       </div>
+
       <div>
         <TextField
           onChange={(e) => setP1Hp(e.target.value)}
@@ -34,6 +35,7 @@ const Player1Status = ({ newMatch }) => {
           variant='filled'
         />
       </div>
+
       <div className='player1'>
         <Button
           color='secondary'
@@ -42,6 +44,7 @@ const Player1Status = ({ newMatch }) => {
         >
           Damage
         </Button>
+
         <Button
           onClick={() => setP1Hp(p1Hp + parseInt(damage, 10))}
           style={{ background: 'green', color: 'white' }}
@@ -49,7 +52,9 @@ const Player1Status = ({ newMatch }) => {
         >
           Heal
         </Button>
+
         <br />
+
         <Button
           color='primary'
           onClick={() => setP1Hp(p1Hp / 2)}
@@ -57,6 +62,7 @@ const Player1Status = ({ newMatch }) => {
         >
           1/2
         </Button>
+
         <Button color='default' onClick={() => setP1Hp(0)} variant='contained'>
           OTK
         </Button>

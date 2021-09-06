@@ -33,6 +33,7 @@ const KeypadArea = () => {
         >
           Clear
         </Button>
+
         <TextField
           onChange={(e) => {
             setDamage(e.target.value);
@@ -41,6 +42,7 @@ const KeypadArea = () => {
           value={damage}
           variant='filled'
         />
+
         <Button
           color='secondary'
           onClick={() => {

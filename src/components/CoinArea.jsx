@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { ButtonGroup } from '@material-ui/core';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import SettingsBackupRestoreIcon from '@material-ui/icons/SettingsBackupRestore';
 
 const CoinArea = () => {
   const [coinStatus, setCoinStatus] = useState([]);
@@ -38,10 +41,12 @@ const CoinArea = () => {
                 ]);
               }
             }}
+            startIcon={<AddCircleIcon />}
             variant='contained'
           >
             Add Coin
           </Button>
+
           <Button
             color='secondary'
             onClick={() => {
@@ -49,9 +54,21 @@ const CoinArea = () => {
                 setCoinStatus(coinStatus.slice(0, coinStatus.length - 1));
               }
             }}
+            startIcon={<DeleteForeverIcon />}
             variant='contained'
           >
             Remove Coin
+          </Button>
+
+          <Button
+            color='default'
+            onClick={() => {
+              setCoinStatus([]);
+            }}
+            startIcon={<SettingsBackupRestoreIcon />}
+            variant='contained'
+          >
+            Clear
           </Button>
         </ButtonGroup>
       </div>

@@ -3,6 +3,9 @@ import Button from '@material-ui/core/Button';
 import { ButtonGroup } from '@material-ui/core';
 import Dice from 'react-dice-roll';
 import { useState } from 'react';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import SettingsBackupRestoreIcon from '@material-ui/icons/SettingsBackupRestore';
 
 const DiceArea = () => {
   const [diceCount, setDiceCount] = useState([]);
@@ -15,9 +18,10 @@ const DiceArea = () => {
             color='primary'
             onClick={() => {
               if (diceCount.length < 3) {
-                setDiceCount([...diceCount, <Dice size='50' />]);
+                setDiceCount([...diceCount, <Dice size='60' />]);
               }
             }}
+            startIcon={<AddCircleIcon />}
             variant='contained'
           >
             Add Dice
@@ -29,9 +33,20 @@ const DiceArea = () => {
                 setDiceCount(diceCount.slice(0, diceCount.length - 1));
               }
             }}
+            startIcon={<DeleteForeverIcon />}
             variant='contained'
           >
             Remove Dice
+          </Button>
+          <Button
+            color='default'
+            onClick={() => {
+              setDiceCount([]);
+            }}
+            startIcon={<SettingsBackupRestoreIcon />}
+            variant='contained'
+          >
+            Clear
           </Button>
         </ButtonGroup>
       </div>
