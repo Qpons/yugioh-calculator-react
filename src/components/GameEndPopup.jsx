@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Button from '@material-ui/core/Button';
 import { GameOverContext } from '../DamageContext';
 import './style.css';
+import PropTypes from 'prop-types';
 
 const GameEndPopup = ({ onConfirm, trigger }) => {
   const { setGameOver } = useContext(GameOverContext);
@@ -32,6 +33,11 @@ const GameEndPopup = ({ onConfirm, trigger }) => {
   ) : (
     ''
   );
+};
+
+GameEndPopup.propTypes = {
+  onConfirm: PropTypes.func.isRequired,
+  trigger: PropTypes.number.isRequired,
 };
 
 export default GameEndPopup;

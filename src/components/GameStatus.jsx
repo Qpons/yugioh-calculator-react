@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
+import PropTypes from 'prop-types';
 
 const GameStatus = ({ matchStatus }) => {
   const [activeStep, setActiveStep] = useState(0);
@@ -32,6 +33,10 @@ const GameStatus = ({ matchStatus }) => {
       ))}
     </Stepper>
   );
+};
+
+GameStatus.propTypes = {
+  matchStatus: PropTypes.array.isRequired,
 };
 
 export default GameStatus;
