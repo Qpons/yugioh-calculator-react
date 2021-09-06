@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { DamageContext, GameOverContext } from '../DamageContext';
+import PropTypes from 'prop-types';
 
 const Player1Status = ({ newMatch }) => {
   const [p1Hp, setP1Hp] = useState(8000);
@@ -62,6 +63,10 @@ const Player1Status = ({ newMatch }) => {
       </div>
     </>
   );
+};
+
+Player1Status.propTypes = {
+  newMatch: PropTypes.number.isRequired,
 };
 
 export default Player1Status;
