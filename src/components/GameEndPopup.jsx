@@ -23,7 +23,7 @@ const GameEndPopup = ({ onConfirm, trigger }) => {
         Confirm
       </Button>
 
-      {/*If cancelled, players can go back and confirm game before proceeding */}
+      {/* If cancelled, players can go back and confirm game before proceeding */}
       <Button
         color='secondary'
         onClick={() => {

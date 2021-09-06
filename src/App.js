@@ -46,7 +46,7 @@ function App() {
       {/* Tracks game progress */}
       <GameStatus matchStatus={matchProgress} />
 
-      {/*Player 1 HP and HP modifiers*/}
+      {/* Player 1 HP and HP modifiers */}
       <div className='base p1'>
         <GameOverContext.Provider value={{ gameOver, setGameOver }}>
           <DamageContext.Provider value={{ damage, setDamage }}>
@@ -55,7 +55,7 @@ function App() {
         </GameOverContext.Provider>
       </div>
 
-      {/*Player 2 HP and HP modifiers*/}
+      {/* Player 2 HP and HP modifiers */}
       <div className='base p2'>
         <GameOverContext.Provider value={{ gameOver, setGameOver }}>
           <DamageContext.Provider value={{ damage, setDamage }}>
@@ -64,24 +64,24 @@ function App() {
         </GameOverContext.Provider>
       </div>
 
-      {/*Coin toss area*/}
+      {/* Coin toss area */}
       <div className='base coin-area'>
         <CoinArea />
       </div>
 
-      {/*Keypad to set damage*/}
+      {/* Keypad to set damage */}
       <div className='base keypad-area'>
         <DamageContext.Provider value={{ damage, setDamage }}>
           <KeypadArea />
         </DamageContext.Provider>
       </div>
 
-      {/*Dice roll area*/}
+      {/* Dice roll area */}
       <div className='base dice-area'>
         <DiceArea />
       </div>
 
-      {/*Popup to confirm game end. Confirming will move on to next game.*/}
+      {/* Popup to confirm game end. Confirming will move on to next game. */}
       <GameOverContext.Provider value={{ gameOver, setGameOver }}>
         <GameEndPopup
           onConfirm={(winner) =>
