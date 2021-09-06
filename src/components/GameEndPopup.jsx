@@ -10,6 +10,8 @@ const GameEndPopup = ({ onConfirm, trigger }) => {
   return trigger ? (
     <div className='popup'>
       <h2>Player {trigger} Win?</h2>
+      {/* If winner is confirmed. Then onConfirm will add the winner to the current match status and
+      start the next game */}
       <Button
         color='primary'
         onClick={() => {
@@ -20,6 +22,8 @@ const GameEndPopup = ({ onConfirm, trigger }) => {
       >
         Confirm
       </Button>
+
+      {/*If cancelled, players can go back and confirm game before proceeding */}
       <Button
         color='secondary'
         onClick={() => {

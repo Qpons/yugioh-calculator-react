@@ -16,6 +16,7 @@ function App() {
   const [gameOver, setGameOver] = useState(0);
   const [matchProgress, setMatchProgress] = useState([]);
 
+  // Check who wins after game 2 or game 3 if there is a tie up to game 2
   useEffect(() => {
     console.log(matchProgress.length);
     if (matchProgress.length === 3) {
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <div>
+      {/* Option to force restart otherwise game will restart when a player wins */}
       <Button
         color='primary'
         onClick={() => {
@@ -41,8 +43,10 @@ function App() {
         Restart
       </Button>
 
+      {/* Tracks game progress */}
       <GameStatus matchStatus={matchProgress} />
 
+      {/*Player 1 HP and HP modifiers*/}
       <div className='base p1'>
         <GameOverContext.Provider value={{ gameOver, setGameOver }}>
           <DamageContext.Provider value={{ damage, setDamage }}>
@@ -51,6 +55,7 @@ function App() {
         </GameOverContext.Provider>
       </div>
 
+      {/*Player 2 HP and HP modifiers*/}
       <div className='base p2'>
         <GameOverContext.Provider value={{ gameOver, setGameOver }}>
           <DamageContext.Provider value={{ damage, setDamage }}>
@@ -59,20 +64,24 @@ function App() {
         </GameOverContext.Provider>
       </div>
 
+      {/*Coin toss area*/}
       <div className='base coin-area'>
         <CoinArea />
       </div>
 
+      {/*Keypad to set damage*/}
       <div className='base keypad-area'>
         <DamageContext.Provider value={{ damage, setDamage }}>
           <KeypadArea />
         </DamageContext.Provider>
       </div>
 
+      {/*Dice roll area*/}
       <div className='base dice-area'>
         <DiceArea />
       </div>
 
+      {/*Popup to confirm game end. Confirming will move on to next game.*/}
       <GameOverContext.Provider value={{ gameOver, setGameOver }}>
         <GameEndPopup
           onConfirm={(winner) =>

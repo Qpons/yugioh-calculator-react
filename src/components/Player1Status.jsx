@@ -9,11 +9,13 @@ const Player1Status = ({ newMatch }) => {
   const { damage } = useContext(DamageContext);
   const { setGameOver } = useContext(GameOverContext);
 
+  // When Player 1 HP is depleted, trigger game over popup with Player 2 as winner.
   if (p1Hp <= 0) {
     setGameOver(2);
     setP1Hp(1);
   }
 
+  // Reset Player 1 HP when new game starts.
   useEffect(() => {
     setP1Hp(8000);
   }, [newMatch]);

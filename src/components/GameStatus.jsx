@@ -12,6 +12,7 @@ const GameStatus = ({ matchStatus }) => {
     { game: 'Game 3', turn: 'First: ', winner: 'Win: ' },
   ];
 
+  // Triggers new match when matchStatus progresses. Stepper progresses accordingly
   useEffect(() => {
     setActiveStep(matchStatus.length);
   }, [matchStatus.length]);

@@ -54,7 +54,9 @@ const KeypadArea = () => {
           Del
         </Button>
       </div>
+
       <br />
+
       <div>
         {keypadBtns.map((value, index) => {
           return (
