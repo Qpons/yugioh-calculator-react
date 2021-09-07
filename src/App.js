@@ -3,8 +3,7 @@ import './App.css';
 import { DamageContext } from './DamageContext';
 import { GameOverContext } from './DamageContext';
 import GameStatus from './components/GameStatus';
-import Player1Status from './components/Player1Status';
-import Player2Status from './components/Player2Status';
+import PlayerStatus from './components/PlayerStatus';
 import KeypadArea from './components/KeypadArea';
 import GameEndPopup from './components/GameEndPopup';
 import Button from '@material-ui/core/Button';
@@ -50,16 +49,7 @@ function App() {
       <div className='base p1'>
         <GameOverContext.Provider value={{ gameOver, setGameOver }}>
           <DamageContext.Provider value={{ damage, setDamage }}>
-            <Player1Status newMatch={matchProgress.length} />
-          </DamageContext.Provider>
-        </GameOverContext.Provider>
-      </div>
-
-      {/* Player 2 HP and HP modifiers */}
-      <div className='base p2'>
-        <GameOverContext.Provider value={{ gameOver, setGameOver }}>
-          <DamageContext.Provider value={{ damage, setDamage }}>
-            <Player2Status newMatch={matchProgress.length} />
+            <PlayerStatus newMatch={matchProgress.length} />
           </DamageContext.Provider>
         </GameOverContext.Provider>
       </div>
